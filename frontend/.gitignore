@@ -6,6 +6,11 @@ node_modules
 .pnp.js
 
 /.idea
+../.idea/
+../backend/.idea/
+../backend/go.mod
+../backend/go.sum
+
 .fleet
 # testing
 /coverage

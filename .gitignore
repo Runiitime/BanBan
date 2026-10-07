@@ -1,0 +1,11 @@
+/.idea/.gitignore
+/backend/.idea/.gitignore
+/backend/.idea/backend.iml
+/.idea/BanBan.iml
+/backend/.idea/go.imports.xml
+/backend/go.mod
+/backend/go.sum
+/.idea/modules.xml
+/backend/.idea/modules.xml
+/.idea/vcs.xml
+/backend/.idea/vcs.xml

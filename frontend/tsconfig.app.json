@@ -22,11 +22,11 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
 
-    "baseUrl": "/",
+    "baseUrl": "./",
     "paths": {
       "@data/*": ["src/data/*"],
       "@infrastructure/*": ["src/infrastructure/*"],
-      "@components": ["src/views/components/*"],
+      "@components/*": ["src/views/components/*"],
     }
   },
   "include": ["src"]
