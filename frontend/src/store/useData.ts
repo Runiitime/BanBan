@@ -1,0 +1,141 @@
+import React from "react";
+
+import type { IBoard } from "@data/board";
+
+export const useData = (): IBoard => {
+  return React.useMemo(
+    (): IBoard => ({
+      id: "board_1",
+      title: "Board 1",
+      description: "A board",
+      columns: {
+        clm: {
+          id: "clm",
+          title: "First column",
+          description: "---",
+          position: 1,
+          color: "",
+          created_at: "---",
+          updated_at: "---",
+          cards: {
+            clm_crd1: {
+              id: "clm_crd1",
+              position: 1,
+              title: "First card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+            clm_crd2: {
+              id: "clm_crd2",
+              position: 2,
+              title: "Second card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+          },
+        },
+
+        clm2: {
+          id: "clm2",
+          title: "Second column",
+          description: "---",
+          position: 1,
+          color: "",
+          created_at: "---",
+          updated_at: "---",
+          cards: {
+            clm2_crd1: {
+              id: "clm2_crd1",
+              position: 1,
+              title: "First card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+            clm2_crd2: {
+              id: "clm2_crd2",
+              position: 2,
+              title: "Second card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+            clm2_crd3: {
+              id: "clm2_crd3",
+              position: 3,
+              title: "Third card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+          },
+        },
+
+        clm3: {
+          id: "clm3",
+          title: "Third column",
+          description: "---",
+          position: 1,
+          color: "",
+          created_at: "---",
+          updated_at: "---",
+          cards: {
+            clm3_crd1: {
+              id: "clm_crd1_1",
+              position: 1,
+              title: "First card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+            clm3_crd2: {
+              id: "clm3_crd2",
+              position: 1,
+              title: "Second card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+            clm3_crd3: {
+              id: "clm3_crd3",
+              position: 1,
+              title: "Third card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+            clm3_crd4: {
+              id: "clm3_crd4",
+              position: 1,
+              title: "Fourth card",
+              description: "---",
+              created_at: "---",
+              updated_at: "---",
+              completed_at: "---",
+              status: "in process",
+            },
+          },
+        },
+      },
+    }),
+    [],
+  );
+};
