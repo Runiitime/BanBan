@@ -1,4 +1,3 @@
-import type { IMap } from "../structure";
 import type { ICard } from "./ICard.ts";
 
 export interface IColumn {
@@ -12,5 +11,5 @@ export interface IColumn {
   updated_at?: string;
 
   color: string;
-  cards?: IMap<ICard>;
+  cards: ICard[];
 }

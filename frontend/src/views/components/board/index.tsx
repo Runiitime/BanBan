@@ -15,11 +15,13 @@ export const Board: React.FC<Props> = ({ board }: Props) => {
   const { columns } = board;
 
   const columnsItems = React.useMemo(() => {
-    return map(columns, (item: IColumn) => <Column data={item} />);
+    return map(columns, (item: IColumn) => (
+      <Column key={item.id} data={item} />
+    ));
   }, [columns]);
 
   return (
-    <Box pt="4" px="7" style={Styled.Board}>
+    <Box pt="4" px="7" style={Styled.Board} id={"board"}>
       <Flex direction="row" gap="4">
         {columnsItems}
       </Flex>

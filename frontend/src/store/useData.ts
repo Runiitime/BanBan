@@ -17,8 +17,8 @@ export const useData = (): IBoard => {
           color: "",
           created_at: "---",
           updated_at: "---",
-          cards: {
-            clm_crd1: {
+          cards: [
+            {
               id: "clm_crd1",
               position: 1,
               title: "First card",
@@ -28,7 +28,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-            clm_crd2: {
+            {
               id: "clm_crd2",
               position: 2,
               title: "Second card",
@@ -38,7 +38,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-          },
+          ],
         },
 
         clm2: {
@@ -49,8 +49,8 @@ export const useData = (): IBoard => {
           color: "",
           created_at: "---",
           updated_at: "---",
-          cards: {
-            clm2_crd1: {
+          cards: [
+            {
               id: "clm2_crd1",
               position: 1,
               title: "First card",
@@ -60,7 +60,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-            clm2_crd2: {
+            {
               id: "clm2_crd2",
               position: 2,
               title: "Second card",
@@ -70,7 +70,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-            clm2_crd3: {
+            {
               id: "clm2_crd3",
               position: 3,
               title: "Third card",
@@ -80,7 +80,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-          },
+          ],
         },
 
         clm3: {
@@ -91,8 +91,8 @@ export const useData = (): IBoard => {
           color: "",
           created_at: "---",
           updated_at: "---",
-          cards: {
-            clm3_crd1: {
+          cards: [
+            {
               id: "clm_crd1_1",
               position: 1,
               title: "First card",
@@ -102,7 +102,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-            clm3_crd2: {
+            {
               id: "clm3_crd2",
               position: 1,
               title: "Second card",
@@ -112,7 +112,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-            clm3_crd3: {
+            {
               id: "clm3_crd3",
               position: 1,
               title: "Third card",
@@ -122,7 +122,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-            clm3_crd4: {
+            {
               id: "clm3_crd4",
               position: 1,
               title: "Fourth card",
@@ -132,7 +132,7 @@ export const useData = (): IBoard => {
               completed_at: "---",
               status: "in process",
             },
-          },
+          ],
         },
       },
     }),
