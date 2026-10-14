@@ -10,8 +10,6 @@ import {
   Text,
 } from "@radix-ui/themes";
 
-import type { ICard } from "@data/board";
-
 import { useData } from "../../../store";
 import * as Styled from "./style.ts";
 
@@ -22,18 +20,11 @@ interface Props {
 }
 
 export const Card: React.FC<Props> = ({ id, column, index }: Props) => {
-  const board = useData();
+  const { columnsRows } = useData();
 
   const data = useMemo(() => {
-    return board.columns?.[column]?.cards?.[id];
-  }, [board, id, column]);
-
-  console.group();
-  console.log("id", id);
-  console.log("column", column);
-  console.log("board", board);
-  console.log("data", data);
-  console.groupEnd();
+    return columnsRows[id];
+  }, [columnsRows, id]);
 
   const { ref, isDragging } = useSortable({
     id,

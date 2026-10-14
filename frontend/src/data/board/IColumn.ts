@@ -1,11 +1,6 @@
-import type { UniqueIdentifier } from "@dnd-kit/abstract";
-
-import type { IMap } from "@data/structure";
-
-import type { ICard } from "./ICard.ts";
-
 export interface IColumn {
   id: string;
+  boardId: string;
   title: string;
   description?: string;
 
@@ -15,5 +10,6 @@ export interface IColumn {
   updated_at?: string;
 
   color: string;
-  cards: IMap<ICard>;
+
+  itemsOrder: string[];
 }

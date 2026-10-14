@@ -8,24 +8,18 @@ import {
 } from "@dnd-kit/react";
 import { Box, Flex } from "@radix-ui/themes";
 
-import type { IBoard } from "@data/board";
-
-import { useItemsOrder } from "../../hooks";
+import { useData } from "../../../store";
 import { Column } from "../column";
 import * as Styled from "./style";
 
-type Props = IBoard;
+export const Board: React.FC = () => {
+  const { boardInfo, boardColumns, rowsOrder } = useData();
 
-export const Board: React.FC<Props> = ({
-  id,
-  columns,
-  title,
-  description,
-}: Props) => {
-  const { columnOrders, columnItemsOrders } = useItemsOrder(columns);
+  const [columnOrder, setColumnOrder] = React.useState(
+    () => boardInfo.columnsOrder,
+  );
 
-  const [columnOrder, setColumnOrder] = React.useState(() => columnOrders);
-  const [itemsOrder, setItemsOrder] = React.useState(() => columnItemsOrders);
+  const [itemsOrder, setItemsOrder] = React.useState(() => rowsOrder);
 
   // Move item
   const handleDragOver = React.useCallback((event: DragOverEvent) => {
@@ -51,7 +45,7 @@ export const Board: React.FC<Props> = ({
 
   const columnsItems = React.useMemo(() => {
     return columnOrder.map((column: string, index: number) => {
-      const clm = columns[column];
+      const clm = boardColumns[column];
       return (
         <Column key={clm?.id} index={index} {...clm}>
           {itemsOrder[clm?.id].map((id: string, index: number) => (
@@ -60,7 +54,7 @@ export const Board: React.FC<Props> = ({
         </Column>
       );
     });
-  }, [columns, columnOrder, itemsOrder]);
+  }, [boardColumns, columnOrder, itemsOrder]);
 
   return (
     <DragDropProvider onDragEnd={handleDragEnd} onDragOver={handleDragOver}>
