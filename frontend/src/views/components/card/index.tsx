@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useMemo } from "react";
 import type { UniqueIdentifier } from "@dnd-kit/core";
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
+import { useSortable } from "@dnd-kit/react/sortable";
 import {
   Badge,
   Box,
@@ -13,37 +12,46 @@ import {
 
 import type { ICard } from "@data/board";
 
+import { useData } from "../../../store";
 import * as Styled from "./style.ts";
 
 interface Props {
   id: UniqueIdentifier;
-  data: ICard;
+  index: number;
+  column: string;
 }
 
-export const Card: React.FC<Props> = ({ id, data }: Props) => {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-    isDragging,
-  } = useSortable({
-    id: id,
+export const Card: React.FC<Props> = ({ id, column, index }: Props) => {
+  const board = useData();
+
+  const data = useMemo(() => {
+    return board.columns?.[column]?.cards?.[id];
+  }, [board, id, column]);
+
+  console.group();
+  console.log("id", id);
+  console.log("column", column);
+  console.log("board", board);
+  console.log("data", data);
+  console.groupEnd();
+
+  const { ref, isDragging } = useSortable({
+    id,
+    index,
+    type: "item",
+    accept: "item",
+    group: column,
   });
 
-  const styled: React.CSSProperties = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    boxSizing: "border-box",
-    backgroundColor: isDragging ? "#FF977D" : "#70B8FF",
-    ...Styled.Card,
-  };
-
   return (
-    <CardUI {...attributes} {...listeners} style={styled} ref={setNodeRef}>
+    <CardUI
+      style={Styled.Card}
+      className="Item"
+      ref={ref}
+      data-dragging={isDragging}
+    >
       <Box>
-        <Heading size="4">{data.title}</Heading>
+        <Heading size="4">{data?.title}</Heading>
       </Box>
       <Box>
         <Text>{data?.description}</Text>

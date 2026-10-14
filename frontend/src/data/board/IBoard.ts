@@ -1,9 +1,9 @@
-import type { IMap } from "../structure";
+import type { IMap, MapI } from "../structure";
 import type { IColumn } from "./IColumn.ts";
 
 export interface IBoard {
   id: string;
   title: string;
   description?: string;
-  columns?: IMap<IColumn>;
+  columns: MapI<IColumn>;
 }
